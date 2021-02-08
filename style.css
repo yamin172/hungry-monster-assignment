@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Rajdhani", sans-serif !important;
+    box-sizing: border-box;
+    font-weight: 600 !important;
+}
+
+.navbar {
+    box-shadow: rgb(0 0 0 / 3%) 0px 6px 8px, rgb(0 0 0 / 30%) 0px 1px 2px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #1f1e1e !important;
+}
+.card {
+    background: rgb(241 234 234 / 20%) !important;
+    color: #f34242 !important;
