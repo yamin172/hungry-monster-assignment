@@ -2,15 +2,15 @@ const input = document.getElementById("search-input");
 const mealItems = document.getElementById("item-panel");
 const row = document.getElementById("row");
 const button = document.getElementById("button");
-// button event handler
+// add button event handler
 button.addEventListener("click", eventWork);
-// input event handler
+// add input event handler
 input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         eventWork();
     }
 });
-// api function
+// api function here
 function eventWork() {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`)
         .then((res) => res.json())
@@ -20,7 +20,7 @@ function eventWork() {
                 data.meals.map((meal) => {
                     allItem += `<div class="col-md-3">
                     <div class="item text-center  card" mealId="${meal.idMeal}">
-                    <a href="#" class="recipe-btn text-light text-decoration-none">
+                    <a href="#" class="recipe-btn text-dark text-decoration-none">
                         <img src = "${meal.strMealThumb}" id="meal-thumb" class="w-100 img-fluid">
                         <p class="mt-4" id="meal-name">${meal.strMeal}</p>
                     </a>
@@ -40,7 +40,6 @@ function eventWork() {
         });
 }
 
-// meal id found
 row.addEventListener("click", (e) => {
     const meals = e.path.find((item) => {
         if (item.classList) {
@@ -55,7 +54,6 @@ row.addEventListener("click", (e) => {
     }
 });
 
-// get meal id
 function getMealId(mealId) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
         .then((response) => response.json())
