@@ -10,6 +10,24 @@ input.addEventListener("keypress", (e) => {
         eventWork();
     }
 });
+// thumbnail image function
+fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+.then(res => res.json())
+.then(data => displayCategories(data))
+
+const displayCategories = categories =>{
+    const imgCategories = document.getElementById('img-catalog');
+    for (let i = 0; i < categories.length; i++) {
+        const imageDiv = categories[i];
+        const imgCategory = document.createElement('div');
+        const title = document.createElement('img');
+        title.innerText = categories.title;
+        const info = document.createElement('p');
+        images.innerHTML = categories.images;
+        imgCategories.appendChild(img)
+    }
+}
+
 // api function here
 function eventWork() {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`)
